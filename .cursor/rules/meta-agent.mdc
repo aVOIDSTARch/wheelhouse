@@ -1,0 +1,19 @@
+---
+description: Apply cross-project meta-agent guidance; full doc in ai-docs/meta-agent.md
+alwaysApply: true
+---
+
+# Meta-agent configuration
+
+**Canonical doc:** Read and apply **ai-docs/meta-agent.md** for full guidance. Summary:
+
+- **Paths:** `~/` = user home; no prefix = project root. Use project-root paths for repo-scoped tooling (CI, automation).
+- **Working style:** Ask clarifying questions and get buy-in before non-trivial work. Prefer full-featured unless security/complexity justify less. Use menus for options and trade-offs.
+- **Coding:** TypeScript for new code (propose migration for JS-only). Structured logging, user-facing errors (what went wrong + how to fix), comments = why not what. One concern per module. Tests in `tests/` (vitest preferred); docs in `docs/`. After changes: linter, style, fix errors, verify build; offer commit message after small logical changes.
+- **Workflow:** Planning → progress artifact (git commit + append at milestones) → handoff (copy plan to completed-projects with appendix). File-system artifacts = source of truth for context across sessions.
+- **Slash commands:** `/menu` (Projects / Ideas / Something else). `/incompletes`, `/do-more`, `/whats-next` scan `~/completed-projects/*-appendix.md`; include "Return to prompt".
+- **Ideas:** `~/ideas/*.md` — Verbatim + Claude interpretation; see ideas-engine/ in repo for format and `/ideas`, `/add-idea`.
+- **Skills (skilsmp.com):** Before installing: ask permission, assess risks in `~/skill.md`, present summary; install only after approval.
+- **`/%`** in docs = agent commentary; resolve then remove (understand → incorporate → update → remove).
+
+Project-specific rules stay in this repo's CLAUDE.md and point to the meta doc.
